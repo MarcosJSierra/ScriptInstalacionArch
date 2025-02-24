@@ -74,8 +74,8 @@ do
 
         echo "#   1: Instalación YAY"
         echo "#   2: Instalación Chrome"
-        echo "#   2: Instalación Slack"
-        echo "#   2: Instalación Postman"
+        echo "#   3: Instalación Slack"
+        echo "#   4: Instalación Postman"
         echo $menu
         echo -n $opcion
         read b
@@ -88,6 +88,21 @@ do
             git clone https://aur.archlinux.org/yay.git 
             cd yay
             makepkg -si
+            echo $menu
+        elif [ $b -eq 2 ]
+        then
+            echo $menu
+            yay -S google-chrome
+            echo $menu
+        elif [ $b -eq 3 ]
+        then
+            echo $menu
+            yay -S slack-desktop
+            echo $menu
+        elif [ $b -eq 4 ]
+        then
+            echo $menu
+            yay -S postman-bin
             echo $menu
         fi 
         
@@ -139,11 +154,13 @@ do
         then
             sudo pacman -S openssh
         fi 
-    elif [ $a -eq 7 ]
+    elif [ $a -eq 8 ]
     then
         echo $menu
         echo "#   1: Telegram"
         echo "#   2: Discord"
+        echo "#   3: Tree"
+        echo "#   4: Vlc"
         echo $menu
 
         
@@ -152,7 +169,17 @@ do
 
         if [ $b -eq 1 ]
         then
-            sudo pacman -S openssh
+            sudo pacman -S telegram-desktop
+        
+        elif [ $b -eq 2 ]
+        then
+            sudo pacman -S discord
+        elif [ $b -eq 3 ]
+        then
+            sudo pacman -S tree
+        elif [ $b -eq 4 ]
+        then
+            sudo pacman -S vlc
         fi 
     fi
     echo $menu
